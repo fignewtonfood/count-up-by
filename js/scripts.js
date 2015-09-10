@@ -1,4 +1,6 @@
-var pigLatin = function(word, count) {
+var countBy = function(target, increment) {
+    var arrayOfIntegers = _.range(increment, target+ 1, increment);
+    return arrayOfIntegers;
 };
 
 
