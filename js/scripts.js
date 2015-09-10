@@ -1,4 +1,4 @@
-var countBy = function(target, increment) {
+var cntBy = function(target, increment) {
 //One line solution requiring 'underscore' javascript library
     // var arrayOfIntegers = _.range(increment, target+ 1, increment);
     var array_length = Math.floor(target/increment);
@@ -8,14 +8,20 @@ var countBy = function(target, increment) {
 };
 
 
-// $(document).ready(function() {
-//     $("form#piglatin").submit(function(event){
-//         var word = $("input#word").val();
-//         var result = pigLatin(word, count);
-//
-//         $(".output").text(result);
-//
-//         $("#result").show();
-//         event.preventDefault();
-//     });
-// });
+$(document).ready(function() {
+    $("form#cntby").submit(function(event){
+        var target = parseInt($("input#target").val());
+        var increment = parseInt($("input#increment").val());
+
+        var answer = cntBy(target, increment);
+        var arraylength = answer.length;
+
+
+        $(".length").text(arraylength);
+
+        $(".output").text(answer.join(", "));
+
+        $("#result").show();
+        event.preventDefault();
+    });
+});
