@@ -1,5 +1,9 @@
 var countBy = function(target, increment) {
-    var arrayOfIntegers = _.range(increment, target+ 1, increment);
+//One line solution requiring 'underscore' javascript library
+    // var arrayOfIntegers = _.range(increment, target+ 1, increment);
+    var array_length = Math.floor(target/increment);
+    var static_increment = increment;
+    var arrayOfIntegers = Array.apply(null, Array(array_length)).map(function (_,increment){return static_increment + (increment*static_increment);});
     return arrayOfIntegers;
 };
 
